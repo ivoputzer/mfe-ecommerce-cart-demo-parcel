@@ -1,0 +1,26 @@
+name: NodeJs CI
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  cart:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Installing npm dependencies
+        run: npm ci
+        working-directory: ./cart
+      - name: Running tests
+        run: npm test
+        working-directory: ./cart
+      - name: Creating npm package
+        run: npm run build
+        working-directory: ./cart
+      # - name: Archive cart npm package
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: dist-cart
+      #     path: |
+      #       cart/dist
