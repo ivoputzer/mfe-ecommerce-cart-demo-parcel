@@ -1,0 +1,29 @@
+{
+  "name": "cart",
+  "version": "1.0.0",
+  "description": "",
+  "module": "dist/index.mjs",
+  "targets": {
+    "module": {
+      "includeNodeModules": true
+    }
+  },
+  "source": "index.mjs",
+  "scripts": {
+    "start": "parcel index.html -p 4322",
+    "test": "mocha test/**",
+    "build": "rm -rf dist; parcel build",
+    "standard": "standard"
+  },
+  "author": "Ivo von Putzer Reibegg <ivo.putzer@gmail.com> (https://github.com/ivoputzer)",
+  "license": "MIT",
+  "devDependencies": {
+    "jsdom": "^20.0.1",
+    "mocha": "^10.1.0",
+    "parcel": "^2.7.0",
+    "sinon": "^14.0.1"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^7.6.0"
+  }
+}
